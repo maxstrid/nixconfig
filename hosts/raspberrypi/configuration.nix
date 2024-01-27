@@ -7,10 +7,6 @@
     ];
 
   boot.loader = {
-    raspberryPi = {
-      enable = true;
-      version = 4;
-    };
     grub.enable = false;
     generic-extlinux-compatible.enable = true;
   };

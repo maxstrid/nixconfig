@@ -37,6 +37,9 @@
       firefox
       tree
     ];
+    openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFRDyXDfuw4T+zKEoPOQZU8hiNrsoT+gD+nmAELqqhHC max@t480"
+    ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -49,8 +52,22 @@
     enableSSHSupport = true;
   };
 
-  services.openssh.enable = true;
-  networking.firewall.enable = false;
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+      PermitRootLogin = "no";
+      LogLevel = "VERBOSE";
+      PasswordAuthentication = false;
+    };
+  };
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      22
+    ];
+  };
 
   hardware.enableRedistributableFirmware = true;
   system.stateVersion = "24.05";

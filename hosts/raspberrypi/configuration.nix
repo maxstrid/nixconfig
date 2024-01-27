@@ -11,7 +11,7 @@
       enable = true;
       version = 4;
     };
-    grub.enable = true;
+    grub.enable = false;
     generic-extlinux-compatible.enable = true;
   };
 
@@ -49,8 +49,6 @@
   services.openssh.enable = true;
 
   networking.firewall.enable = false;
-
-  system.copySystemConfiguration = true;
 
   system.stateVersion = "24.05";
 }

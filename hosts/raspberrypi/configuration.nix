@@ -45,9 +45,9 @@
   };
 
   services.openssh.enable = true;
-
   networking.firewall.enable = false;
 
+  hardware.enableRedistributableFirmware = true;
   system.stateVersion = "24.05";
 }
 

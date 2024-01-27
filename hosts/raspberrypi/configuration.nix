@@ -12,6 +12,8 @@
     loader = {
         efi.canTouchEfiVariables = true;
         systemd-boot.enable = true;
+
+        generic-extlinux-compatible.enable = false;
         grub.enable = false;
     };
   };

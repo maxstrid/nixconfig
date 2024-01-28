@@ -18,6 +18,9 @@
             "/home/docker/jellyfin/config:/config"
             "/home/docker/jellyfin/media:/media"
           ];
+          ports = [
+            "8096:8096"
+          ];
         };
       };
     };

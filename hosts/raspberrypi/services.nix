@@ -1,16 +1,25 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = [
-    pkgs.jellyfin
-    pkgs.jellyfin-web
-    pkgs.jellyfin-ffmpeg
-  ];
+  users.users.docker = {
+    isSystemUser = true;
+    group = "docker";
+  };
 
-  services = {
-    jellyfin = {
-      enable = true;
-      openFirewall = true;
+  virtualisation = {
+    docker.enable = true;
+    oci-containers = {
+      backend = "docker";
+      containers = {
+        jellyfin = {
+          autoStart = true;
+          image = "jellyfin/jellyfin";
+          volumes = [
+            "/home/docker/jellyfin/config:/config"
+            "/home/docker/jellyfin/media:/media"
+          ];
+        };
+      };
     };
   };
 }

@@ -66,7 +66,12 @@
     enable = true;
     allowedTCPPorts = [
       22
+
+      # jellyfin
       8096
+
+      # uptime-kuma
+      3001
     ];
   };
 

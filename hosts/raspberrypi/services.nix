@@ -22,6 +22,17 @@
             "8096:8096"
           ];
         };
+
+        uptime-kuma = {
+          autoStart = true;
+          image = "louislam/uptime-kuma";
+          volumes = [
+            "/home/docker/uptime-kuma/:/app/data"
+          ];
+          ports = [
+            "3001:3001"
+          ];
+        };
       };
     };
   };

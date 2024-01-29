@@ -11,11 +11,11 @@
     { nixpkgs, nixos-hardware, ... }:
     {
       nixosConfigurations = {
-        raspberrypi = nixpkgs.lib.nixosSystem {
+        rpi4 = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
             nixos-hardware.nixosModules.raspberry-pi-4 
-            ./hosts/raspberrypi
+            ./hosts/rpi4
           ];
         };
       };

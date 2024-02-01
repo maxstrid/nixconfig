@@ -2,7 +2,7 @@ keys:
   - &t480 age1sdnnz9wtmu7u8j2ggw29pndc8yvfpnsyxz56gst02k8u52fkq9vsjsv3tc
   - &rpi4 age1tt0c36smx8zervfnaypk8nunkn5th2046wz32fhmsfle6c2rxq3sucarwz
 creation_rules:
-  - path_regex: secrets/[^/]+\.yaml$
+  - path_regex: secrets.yaml
     key_groups:
       - age:
         - *t480

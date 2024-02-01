@@ -59,10 +59,10 @@
           autoStart = true;
           image = "lscr.io/linuxserver/qbittorrent:latest";
           environment = {
-            PUID = 1000;
-            PGID = 1000;
+            PUID = "1000";
+            PGID = "1000";
             TZ = "US/Pacific";
-            WEBUI_PORT = 8080;
+            WEBUI_PORT = "8080";
           };
           volumes = [
             "/home/docker/qbittorrent/config/:/config"

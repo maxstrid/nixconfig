@@ -43,11 +43,12 @@
             "6881:6881"
             "6881:6881/udp"
           ];
+          volumes = [
+            "${config.sops.secrets."wg0.conf".path}:/gluetun/wireguard/wg0.conf"
+          ];
           environment = {
             VPN_SERVICE_PROVIDER = "mullvad";
             VPN_TYPE = "wireguard";
-            WIREGUARD_PRIVATE_KEY = config.sops.secrets.wireguard_private_key;
-            WIREGUARD_ADDRESSES = config.sops.secrets.wireguard_addresses;
           };
           extraOptions = [
             "--cap-add=NET_ADMIN"

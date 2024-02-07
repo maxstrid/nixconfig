@@ -1,7 +1,10 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [
+    inputs.sops-nix.nixosModules.sops
+    inputs.nixos-hardware.nixosModules.raspberry-pi-4
+
     ./hardware-configuration.nix
     ./services.nix
     ./sops.nix

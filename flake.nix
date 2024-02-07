@@ -11,17 +11,18 @@
   };
 
   outputs =
-    { nixpkgs, nixos-hardware, sops-nix, ... }:
-    {
+    inputs: {
       nixosConfigurations = {
-        rpi4 = nixpkgs.lib.nixosSystem {
+        rpi4 = inputs.nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
-          modules = [
-            sops-nix.nixosModules.sops
-            nixos-hardware.nixosModules.raspberry-pi-4 
+          modules = [ ./hosts/rpi4 ];
+          specialArgs = { inherit inputs; };
+        };
 
-            ./hosts/rpi4
-          ];
+        m900 = inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/m900 ];
+          specialArgs = { inherit inputs; };
         };
       };
     };

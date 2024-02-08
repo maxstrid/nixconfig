@@ -48,9 +48,9 @@
   };
 
   systemd.services.mount-disks = {
-    description = “Mounts bcachefs disks”;
-    script = “/run/current-system/sw/bin/mount -t bcachefs /dev/sda:/dev/sdb /mnt”;
-    wantedBy = [ “multi-user.target” ];
+    description = "Mounts bcachefs disks";
+    script = "/run/current-system/sw/bin/mount -t bcachefs /dev/sda:/dev/sdb /mnt";
+    wantedBy = [ "multi-user.target" ];
   };
 
   environment.systemPackages = with pkgs; [

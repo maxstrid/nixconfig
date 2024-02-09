@@ -6,8 +6,9 @@
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
 
     ./hardware-configuration.nix
-    ./services.nix
+    # ./services.nix
     ./sops.nix
+    ./vpn.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

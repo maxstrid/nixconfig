@@ -25,7 +25,7 @@
     };
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "rpi4"; # Define your hostname.
 
   time.timeZone = "US/Pacific";
 
@@ -35,7 +35,7 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.pi = {
+  users.users.admin = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [

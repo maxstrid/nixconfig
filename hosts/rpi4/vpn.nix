@@ -29,14 +29,13 @@
         ];
       };
     };
-  };
-
-  networks.wg0 = {
-    matchConfig.Name = "wg0";
-    address = ["10.100.0.1/24"];
-    networkConfig = {
-      IPMasquerade = "ipv4";
-      IPForward = true;
+    networks.wg0 = {
+      matchConfig.Name = "wg0";
+      address = ["10.100.0.1/24"];
+      networkConfig = {
+        IPMasquerade = "ipv4";
+        IPForward = true;
+      };
     };
   };
 }

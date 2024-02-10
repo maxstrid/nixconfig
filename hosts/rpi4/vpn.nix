@@ -22,7 +22,7 @@
         wireguardPeers = [
           {
             wireguardPeerConfig = {
-              PublicKey = "rDBlbA9JNyrPEOO7n9bNNP2jD7Trx5+j3VMJU+7rhn0=";
+              PublicKey = "tOKEDh+bVBxZLbWjZz0aGlKg9fXHzOODNzP0JFJzeEo=";
               AllowedIPs = ["10.100.0.2"];
             };
           }

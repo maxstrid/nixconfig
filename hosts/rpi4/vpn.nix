@@ -38,4 +38,7 @@
       };
     };
   };
+
+
+  systemd.user.services.systemd-networkd.Unit.After = [ "sops-nix.service" ];
 }

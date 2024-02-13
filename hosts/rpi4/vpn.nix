@@ -38,5 +38,4 @@
       };
     };
   };
-  systemd.user.services.networkd.Unit.After = [ "sops-nix.service" ];
 }

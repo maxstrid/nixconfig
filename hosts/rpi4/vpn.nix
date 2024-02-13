@@ -37,6 +37,6 @@
         IPForward = true;
       };
     };
-    user.services.networkd.Unit.After = [ "sops-nix.service" ];
   };
+  systemd.user.services.networkd.Unit.After = [ "sops-nix.service" ];
 }

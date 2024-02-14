@@ -15,22 +15,11 @@
           autoStart = true;
           image = "jellyfin/jellyfin";
           volumes = [
-            "/home/docker/jellyfin/config:/config"
-            "/home/docker/jellyfin/media:/media"
+            "/mnt/jellyfin/config:/config"
+            "/mnt/media:/media"
           ];
           ports = [
             "8096:8096"
-          ];
-        };
-
-        uptime-kuma = {
-          autoStart = true;
-          image = "louislam/uptime-kuma";
-          volumes = [
-            "/home/docker/uptime-kuma/:/app/data"
-          ];
-          ports = [
-            "3001:3001"
           ];
         };
 
@@ -65,8 +54,8 @@
             WEBUI_PORT = "8080";
           };
           volumes = [
-            "/home/docker/qbittorrent/config/:/config"
-            "/mnt/hdd/downloads:/downloads"
+            "/mnt/qbittorrent/config/:/config"
+            "/mnt/media:/downloads"
           ];
           dependsOn = ["gluetun"];
           extraOptions = [

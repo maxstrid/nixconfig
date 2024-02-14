@@ -1,10 +1,16 @@
 keys:
   - &t480 age1sdnnz9wtmu7u8j2ggw29pndc8yvfpnsyxz56gst02k8u52fkq9vsjsv3tc
   - &rpi4 age1tt0c36smx8zervfnaypk8nunkn5th2046wz32fhmsfle6c2rxq3sucarwz
+  - &m900 age1qvhh6lk2czeppnk9wd8glp50kxe3ngpqwjxnccrm05x7vmvenatq5rfyce
 creation_rules:
   - path_regex: hosts/rpi4/secrets.yaml
     key_groups:
       - age:
         - *t480
         - *rpi4
+  - path_regex: hosts/m900/secrets.yaml
+    key_groups:
+      - age:
+        - *t480
+        - *m900
 

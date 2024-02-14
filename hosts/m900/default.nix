@@ -5,6 +5,8 @@
     inputs.nixos-hardware.nixosModules.common-cpu-intel
 
     ./hardware-configuration.nix
+    ./sops.nix
+    ./services.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

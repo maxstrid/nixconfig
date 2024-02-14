@@ -69,28 +69,12 @@
   };
 
   networking.firewall = {
-    enable = false;
+    enable = true;
     allowedTCPPorts = [
       22
-
-      # jellyfin
-      8096
-
-      # uptime-kuma
-      3001
-
-      # QBittorrent
-      8080
-      6881
-    ];
-
-    allowedUDPPorts = [
-      # QBittorrent
-      6881
     ];
   };
 
   hardware.enableRedistributableFirmware = true;
   system.stateVersion = "24.05";
-
 }

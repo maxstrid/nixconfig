@@ -25,7 +25,7 @@
     font = "Lat2-Terminus16";
   };
 
-  users.users.max = {
+  users.users.admin = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [

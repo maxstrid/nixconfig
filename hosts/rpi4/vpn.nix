@@ -29,7 +29,7 @@
         {
           publicKey = "K26Ii1PeoV/MiHnlR5AVliT1Gxcj6l9e7d2a/JhxPGE=";
           allowedIPs = [ "10.100.0.2/32" ];
-        },
+        }
         {
           publicKey = "kVl6rZc50ByZJC1COkFMmYV6krRY1hMh3HhqFG+OQyg=";
           allowedIPs = [ "10.100.0.3/32" ];

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    inputs.sops-nix.nixosModules.sops
     inputs.nixos-hardware.nixosModules.common-cpu-intel
 
     ./hardware-configuration.nix

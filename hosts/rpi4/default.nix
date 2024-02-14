@@ -23,6 +23,7 @@
         generic-extlinux-compatible.enable = false;
         grub.enable = false;
     };
+    kernel.sysctl = { "net.ipv4.ip_forward" = 1; };
   };
 
   networking.hostName = "rpi4"; # Define your hostname.

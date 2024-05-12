@@ -10,6 +10,7 @@
       enable = true;
       home = "/home/services/ollama";
       models = "/home/services/ollama/models";
+      listenAddress="0.0.0.0:11434";
       writablePaths = [
         "/home/services/ollama"
       ];

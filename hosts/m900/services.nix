@@ -10,7 +10,9 @@
       enable = true;
       home = "/home/services/ollama";
       models = "/home/services/ollama/models";
-      writablePaths = "/home/services/ollama";
+      writablePaths = [
+        "/home/services/ollama"
+      ];
   };
 
   virtualisation = {

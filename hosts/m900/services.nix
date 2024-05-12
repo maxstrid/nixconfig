@@ -6,6 +6,13 @@
     group = "docker";
   };
 
+  services.ollama = {
+      enable = true;
+      home = "/home/services/ollama";
+      models = "/home/services/ollama/models";
+      writablePaths = "/home/services/ollama";
+  };
+
   virtualisation = {
     docker.enable = true;
     oci-containers = {

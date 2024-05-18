@@ -23,10 +23,16 @@
     };
   };
 
-  environment.systemPackages = [
-    pkgs.llama-cpp.override {
-      openclSupport = true;
+  nixpkgs.overlays = [
+    self: super: {
+      llama-cpp = super.llama-cpp.override {
+        openclSupport = true;
+      };
     }
+  ];
+
+  environment.systemPackages = [
+    pkgs.llama-cpp
   ];
 
   services.ollama = {

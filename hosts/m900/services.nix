@@ -6,6 +6,28 @@
     group = "docker";
   };
 
+  # Enable llama-cpp to use the iGPU
+  hardware.opengl = {
+    enable = true;
+    extraPackages = [
+      pkgs.clblast
+      pkgs.intel-ocl
+      pkgs.intel-media-driver
+    ];
+  };
+
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+
+  nixpkgs.config = {
+    llama-cpp = {
+      openclSupport = true;
+    };
+  };
+
+  environment.systemPackages = [
+    llama-cpp
+  ];
+
   services.ollama = {
       enable = true;
       home = "/home/services/ollama";

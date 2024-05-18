@@ -25,7 +25,7 @@
   };
 
   environment.systemPackages = [
-    llama-cpp
+    pkgs.llama-cpp
   ];
 
   services.ollama = {

@@ -35,15 +35,19 @@
     })
   ];
 
-  environment.systemPackages = [
-    pkgs.llama-cpp
-  ];
-
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
 
     # This is to make llama-cpp find the libOpenCL.so.1 library
     LD_LIBRARY_PATH="${pkgs.ocl-icd}/lib:$LD_LIBRARY_PATH";
+  };
+
+  services.llama-cpp = {
+    enable = true;
+    port = 8081;
+    openFirewall = true;
+    model = "/home/services/ollama/neuralhermes-2.5-mistral-7b.Q6_K.gguf";
+    host = "0.0.0.0";
   };
 
   services.ollama = {

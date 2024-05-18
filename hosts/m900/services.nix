@@ -17,8 +17,6 @@
     ];
   };
 
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
-
   nixpkgs.config = {
     llama-cpp = {
       openclSupport = true;
@@ -40,6 +38,13 @@
   environment.systemPackages = [
     pkgs.llama-cpp
   ];
+
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+
+    # This is to make llama-cpp find the libOpenCL.so.1 library
+    LD_LIBRARY_PATH="${pkgs.ocl-icd}/lib:$LD_LIBRARY_PATH";
+  };
 
   services.ollama = {
       enable = true;

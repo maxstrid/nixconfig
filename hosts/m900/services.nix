@@ -11,7 +11,6 @@
     enable = true;
     extraPackages = [
       pkgs.clblast
-      pkgs.intel-ocl
       pkgs.intel-media-driver
     ];
   };
@@ -22,14 +21,12 @@
     llama-cpp = {
       openclSupport = true;
     };
-
-    # Needed for intel-ocl
-    # Not really sure if I even need ocl, llama-cpp only installs clblast
-    allowUnfree = true;
   };
 
   environment.systemPackages = [
-    pkgs.llama-cpp
+    pkgs.llama-cpp.override {
+      openclSupport = true;
+    }
   ];
 
   services.ollama = {

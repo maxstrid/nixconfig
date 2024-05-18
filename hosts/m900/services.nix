@@ -11,12 +11,23 @@
     enable = true;
     extraPackages = [
       pkgs.clblast
+      pkgs.intel-ocl
       pkgs.ocl-icd
       pkgs.intel-media-driver
     ];
   };
 
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+
+  nixpkgs.config = {
+    llama-cpp = {
+      openclSupport = true;
+    };
+
+    # Needed for intel-ocl
+    # Not really sure if I even need ocl, llama-cpp only installs clblast
+    allowUnfree = true;
+  };
 
   nixpkgs.overlays = [
     (self: super: {

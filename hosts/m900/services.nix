@@ -12,6 +12,7 @@
     extraPackages = [
       pkgs.clblast
       pkgs.intel-ocl
+      pkgs.ocl-icd
       pkgs.intel-media-driver
     ];
   };

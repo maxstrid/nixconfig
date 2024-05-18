@@ -24,11 +24,11 @@
   };
 
   nixpkgs.overlays = [
-    self: super: {
+    (self: super: {
       llama-cpp = super.llama-cpp.override {
         openclSupport = true;
       };
-    }
+    })
   ];
 
   environment.systemPackages = [

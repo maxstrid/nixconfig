@@ -42,6 +42,12 @@
           modules = [ ./hosts/m900 ];
           specialArgs = { inherit inputs; };
         };
+
+        m920q = inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/m920q ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }

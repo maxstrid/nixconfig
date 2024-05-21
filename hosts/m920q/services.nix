@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
+  users.groups.ollama = {};
+
   users.users.ollama = {
     isSystemUser = true;
     group = "ollama";
@@ -18,5 +20,8 @@
     ];
   };
 
-  systemd.services.ollama.serviceConfig.User = "ollama";
+  systemd.services.ollama.serviceConfig = {
+    User = "ollama";
+    Group = "ollama";
+  };
 }

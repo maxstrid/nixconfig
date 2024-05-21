@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  users.groups.services = {};
+  users.groups.ollama = {};
 
   users.users.ollama = {
     isSystemUser = true;
-    group = "services";
+    group = "ollama";
     createHome = true;
     home = "/srv/ollama";
   };
@@ -22,6 +22,6 @@
 
   systemd.services.ollama.serviceConfig = {
     User = "ollama";
-    Group = "services";
+    Group = "ollama";
   };
 }

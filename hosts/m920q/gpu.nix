@@ -5,8 +5,8 @@
   hardware.opengl = {
     enable = true;
     extraPackages = [
-      pkgs.intel-ocl;
-      pkgs.ocl-icd;
+      pkgs.intel-ocl
+      pkgs.ocl-icd
       pkgs.intel-media-driver
     ];
   };

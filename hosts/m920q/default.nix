@@ -2,6 +2,9 @@
 
 {
   imports = [
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
+
+    ./services.nix
     ./hardware-configuration.nix
   ];
 

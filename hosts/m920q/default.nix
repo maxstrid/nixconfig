@@ -5,6 +5,7 @@
     inputs.nixos-hardware.nixosModules.common-cpu-intel
 
     ./services.nix
+    ./gpu.nix
     ./hardware-configuration.nix
   ];
 

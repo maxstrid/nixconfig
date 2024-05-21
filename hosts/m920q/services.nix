@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
+  # Ollama
   users.groups.ollama = {};
 
   users.users.ollama = {
@@ -24,4 +25,17 @@
     User = "ollama";
     Group = "ollama";
   };
+
+  # llama.cpp
+  nixpkgs.overlays = [
+    (self: super: {
+      llama-cpp = super.llama-cpp.override {
+        openclSupport = true;
+      };
+    })
+  ];
+
+  environment.systemPackages = [
+    llama-cpp
+  ];
 }

@@ -38,4 +38,9 @@
   environment.systemPackages = [
     pkgs.llama-cpp
   ];
+
+  environment.sessionVariables = {
+    # This is to make llama-cpp find the libOpenCL.so.1 library
+    LD_LIBRARY_PATH="${pkgs.ocl-icd}/lib:$LD_LIBRARY_PATH";
+  };
 }

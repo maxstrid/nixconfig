@@ -16,7 +16,7 @@
     models = "/srv/ollama/models";
     listenAddress="0.0.0.0:11434";
     writablePaths = [
-      "/src/ollama"
+      "/srv/ollama"
     ];
   };
 

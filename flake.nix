@@ -48,6 +48,12 @@
           modules = [ ./hosts/m920q ];
           specialArgs = { inherit inputs; };
         };
+
+        m75q = inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/m75q ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }

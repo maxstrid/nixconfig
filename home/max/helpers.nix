@@ -8,10 +8,14 @@ let
       ln -s ${pkg}/* $out
       rm $out/bin
       mkdir $out/bin
-      for bin in ${pkg}/bin/*; do
+      for bin in ${pkg}/bin/${pkg.pname}; do
         wrapped_bin=$out/bin/$(basename $bin)
         echo "exec ${lib.getExe pkgs.nixgl.nixGLIntel} $bin \$@" > $wrapped_bin
         chmod +x $wrapped_bin
+      done
+      for bin in ${pkg}/bin/*; do
+        [ ! -f $out/bin/$(basename $bin) ] && cp "$bin" "$out/bin/"
+        echo a
       done
     '';
 in

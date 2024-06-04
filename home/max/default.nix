@@ -4,7 +4,7 @@
   imports = [
     ./river.nix
     ./kitty.nix
-    ./yambar.nix
+    ./waybar.nix
   ];
 
   home.username = "max";

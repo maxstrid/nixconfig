@@ -15,7 +15,7 @@
     enable = true;
     home = "/srv/ollama";
     models = "/srv/ollama/models";
-    listenAddress="0.0.0.0:11434";
+    host = "0.0.0.0:11434";
     writablePaths = [
       "/srv/ollama"
     ];

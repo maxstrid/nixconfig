@@ -21,7 +21,7 @@
   nixpkgs.overlays = [
     (self: super: {
       llama-cpp = super.llama-cpp.override {
-          rcpSupport = true;
+          rpcSupport = true;
       };
     })
   ];
@@ -29,23 +29,6 @@
   environment.systemPackages = [
     pkgs.llama-cpp
   ];
-
-  services.llama-cpp = {
-    enable = true;
-    port = 8081;
-    openFirewall = true;
-    model = "/home/services/ollama/models/neuralhermes-2.5-mistral-7b.Q6_K.gguf";
-  };
-
-  services.ollama = {
-      enable = true;
-      home = "/home/services/ollama";
-      models = "/home/services/ollama/models";
-      listenAddress="0.0.0.0:11434";
-      writablePaths = [
-        "/home/services/ollama"
-      ];
-  };
 
   virtualisation = {
     docker.enable = true;

@@ -35,7 +35,6 @@
     port = 8081;
     openFirewall = true;
     model = "/home/services/ollama/models/neuralhermes-2.5-mistral-7b.Q6_K.gguf";
-    host = "0.0.0.0";
   };
 
   services.ollama = {

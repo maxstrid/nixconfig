@@ -6,17 +6,6 @@
     group = "docker";
   };
 
-  # Enable llama-cpp to use the iGPU
-  hardware.opengl = {
-    enable = true;
-    extraPackages = [
-      pkgs.clblast
-      pkgs.intel-ocl
-      pkgs.ocl-icd
-      pkgs.intel-media-driver
-    ];
-  };
-
   # llama.cpp
   nixpkgs.overlays = [
     (self: super: {

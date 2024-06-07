@@ -4,7 +4,7 @@
   nixpkgs.overlays = [
     (self: super: {
       llama-cpp = super.llama-cpp.override {
-        rocmSupport = true;
+        rcpSupport = true;
       };
     })
   ];

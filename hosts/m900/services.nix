@@ -17,30 +17,18 @@
     ];
   };
 
-  nixpkgs.config = {
-    llama-cpp = {
-      openclSupport = true;
-    };
-
-    # Needed for intel-ocl
-    # Not really sure if I even need ocl, llama-cpp only installs clblast
-    allowUnfree = true;
-  };
-
+  # llama.cpp
   nixpkgs.overlays = [
     (self: super: {
       llama-cpp = super.llama-cpp.override {
-        openclSupport = true;
+          rcpSupport = true;
       };
     })
   ];
 
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
-
-    # This is to make llama-cpp find the libOpenCL.so.1 library
-    LD_LIBRARY_PATH="${pkgs.ocl-icd}/lib:$LD_LIBRARY_PATH";
-  };
+  environment.systemPackages = [
+    pkgs.llama-cpp
+  ];
 
   services.llama-cpp = {
     enable = true;

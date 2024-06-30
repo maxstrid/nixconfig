@@ -55,6 +55,8 @@
     description = "Mounts bcachefs disks";
     script = "[ ! \"$(/run/current-system/sw/bin/findmnt -no source -T /mnt)\" = \"/dev/sda:/dev/sdb\" ] && /run/current-system/sw/bin/mount -t bcachefs /dev/sda:/dev/sdb /mnt || true";
     wantedBy = [ "multi-user.target" ];
+    requires = [ "dev-sda.device", "dev-sdb.device" ];
+    after = [ "dev-sda.device", "dev-sdb.device" ];
   };
 
   environment.systemPackages = with pkgs; [

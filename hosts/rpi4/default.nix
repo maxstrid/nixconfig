@@ -7,6 +7,7 @@
 
     ./hardware-configuration.nix
     # ./services.nix
+    ./cloudflare.nix
     ./sops.nix
     ./vpn.nix
   ];

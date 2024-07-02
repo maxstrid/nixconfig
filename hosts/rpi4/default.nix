@@ -77,7 +77,7 @@
     trustedInterfaces = [ "wg0" ];
     extraCommands = ''
       iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT
-      iptables -A INPUT -p tcp --dport 22 -s 10.100.0.0/24 -j ACCEPT
+      iptables -A INPUT -i wg0 -p tcp --dport 22 -j ACCEPT
       iptables -A INPUT -p tcp --dport 22 -j DROP
     '';
   };

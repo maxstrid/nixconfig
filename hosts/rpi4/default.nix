@@ -75,8 +75,8 @@
       22
     ];
     extraCommands = ''
-      iptables -A nixos-fw -p tcp --dport 22 -s 192.168.1.0/24 -j nixos-fw-accept
-      iptables -A nixos-fw -p tcp --dport 22 -j nixos-fw-drop
+      iptables -A INPUT -p tcp --dport 22 -s 192.168.1.0/24 -j ACCEPT
+      iptables -A INPUT -p tcp --dport 22 -j DROP
     '';
   };
 

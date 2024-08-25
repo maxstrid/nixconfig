@@ -42,8 +42,8 @@
           ports = [
             # Qbittorrent
             "8080:8080"
-            "41198:6881"
-            "41198:6881/udp"
+            "41198:41198"
+            "41198:41198/udp"
           ];
           volumes = [
             "${config.sops.secrets."wg0.conf".path}:/gluetun/wireguard/wg0.conf"

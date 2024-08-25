@@ -42,14 +42,14 @@
           ports = [
             # Qbittorrent
             "8080:8080"
-            "6543:6881"
-            "6543:6881/udp"
+            "41198:6881"
+            "41198:6881/udp"
           ];
           volumes = [
             "${config.sops.secrets."wg0.conf".path}:/gluetun/wireguard/wg0.conf"
           ];
           environment = {
-            VPN_SERVICE_PROVIDER = "mullvad";
+            VPN_SERVICE_PROVIDER = "airvpn";
             VPN_TYPE = "wireguard";
           };
           extraOptions = [

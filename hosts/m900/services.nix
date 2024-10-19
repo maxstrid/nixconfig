@@ -51,7 +51,6 @@
           environment = {
             VPN_SERVICE_PROVIDER = "airvpn";
             VPN_TYPE = "wireguard";
-            SERVER_REGIONS="America";
           };
           extraOptions = [
             "--cap-add=NET_ADMIN"

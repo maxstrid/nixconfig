@@ -33,6 +33,12 @@
     openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFRDyXDfuw4T+zKEoPOQZU8hiNrsoT+gD+nmAELqqhHC max@t480"
     ];
+    packages = [
+      pkgs.vim
+      pkgs.htop
+      pkgs.pciutils
+      pkgs.usbutils
+    ];
   };
 
   services.openssh = {
@@ -43,12 +49,6 @@
       LogLevel = "VERBOSE";
       PasswordAuthentication = false;
     };
-    packages = [
-      pkgs.vim
-      pkgs.htop
-      pkgs.pciutils
-      pkgs.usbutils
-    ];
   };
 
   environment.systemPackages = with pkgs; [

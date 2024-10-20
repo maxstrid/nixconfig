@@ -44,10 +44,10 @@
       PasswordAuthentication = false;
     };
     packages = [
-      vim
-      htop
-      pciutils
-      usbutils
+      pkgs.vim
+      pkgs.htop
+      pkgs.pciutils
+      pkgs.usbutils
     ];
   };
 

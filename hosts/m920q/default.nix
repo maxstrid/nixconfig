@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.proxmox-nixos.nixosModules.proxmox-ve
 
     ./services.nix
     ./gpu.nix
@@ -42,6 +43,12 @@
       LogLevel = "VERBOSE";
       PasswordAuthentication = false;
     };
+    packages = [
+      vim
+      htop
+      pciutils
+      usbutils
+    ];
   };
 
   environment.systemPackages = with pkgs; [

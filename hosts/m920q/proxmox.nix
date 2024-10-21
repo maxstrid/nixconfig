@@ -1,8 +1,8 @@
-{ pkgs, lib, ...}:
+{ inputs, pkgs, lib, ...}:
 
 {
   services.proxmos-ve.enable = true;
   nixpkgs.overlays = [
-    proxmox-nixos.overlays."x86_64-linux"
+    inputs.proxmox-nixos.overlays."x86_64-linux"
   ];
 }

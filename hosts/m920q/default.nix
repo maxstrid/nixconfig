@@ -5,6 +5,7 @@
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.proxmox-nixos.nixosModules.proxmox-ve
 
+    ./proxmox.nix
     ./services.nix
     ./gpu.nix
     ./hardware-configuration.nix

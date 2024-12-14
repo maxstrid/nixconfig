@@ -53,6 +53,7 @@
     htop
     git
     wget
+    zfs
   ];
 
   programs.gnupg.agent = {

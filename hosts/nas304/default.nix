@@ -6,6 +6,7 @@
     inputs.sops-nix.nixosModules.sops
 
     ./sops.nix
+    ./nginx.nix
     ./services.nix
     ./hardware-configuration.nix
   ];

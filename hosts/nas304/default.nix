@@ -5,7 +5,7 @@
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.sops-nix.nixosModules.sops
 
-    ./services/
+    ./services
     ./sops.nix
     ./hardware-configuration.nix
   ];

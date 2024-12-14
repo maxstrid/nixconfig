@@ -25,7 +25,7 @@
   networking = {
     hostName = "nas304";
     hostId = "5129c4a0";
-    firewall.enable = true;
+    firewall.enable = false;
   };
 
   time.timeZone = "US/Pacific";

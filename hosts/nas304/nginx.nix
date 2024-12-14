@@ -8,7 +8,7 @@
     recommendedTlsSettings = true;
 
     virtualHosts."nas304.localdomain" = {
-      enableACME = true;
+      #enableACME = true;
 
       locations."/qbittorrent" = {
         proxyPass = "http://127.0.0.1:8080";
@@ -20,8 +20,8 @@
     };
   };
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "mxwhenderson@gmail.com";
-  };
+  # security.acme = {
+  #  acceptTerms = true;
+  #  defaults.email = "mxwhenderson@gmail.com";
+  #};
 }

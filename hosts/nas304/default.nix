@@ -10,19 +10,24 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot = {
+      supportedFilesystems = [ "zfs" ];
+      zfs.forceImportRoot = false;
       loader = {
         systemd-boot.enable = true;
         efi.canTouchEfiVariables = true;
       };
   };
 
-  networking.hostName = "nas304";
+  networking = {
+    hostName = "nas304";
+    hostId = "5129c4a0";
+    firewall.enable = true;
+  };
+
   time.timeZone = "US/Pacific";
 
   i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-  };
+  console.font = "Lat2-Terminus16";
 
   users.users.admin = {
     isNormalUser = true;
@@ -60,8 +65,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-
-  networking.firewall.enable = false;
 
   system.stateVersion = "24.11";
 }

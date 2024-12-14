@@ -4,6 +4,8 @@
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-intel
 
+    ./sops.nix
+    ./services.nix
     ./hardware-configuration.nix
   ];
 

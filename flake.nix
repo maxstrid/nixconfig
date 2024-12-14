@@ -55,6 +55,12 @@
           modules = [ ./hosts/m75q ];
           specialArgs = { inherit inputs; };
         };
+
+        nas304 = inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./hosts/nas304 ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }

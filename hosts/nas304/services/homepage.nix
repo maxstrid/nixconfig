@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  homepage-dashboard = {
+  services.homepage-dashboard = {
     enable = true;
     widgets = [
       {

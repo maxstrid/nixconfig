@@ -25,7 +25,10 @@
   networking = {
     hostName = "nas304";
     hostId = "5129c4a0";
-    firewall.enable = false;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 80 443 ];
+    };
   };
 
   time.timeZone = "US/Pacific";

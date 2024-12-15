@@ -70,7 +70,7 @@
   };
 
   networking.firewall = {
-    enable = true;
+    enable = false;
     trustedInterfaces = [ "wg0" ];
   };
 

@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -24,6 +24,26 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/var/lib/docker/overlay2/2781b51025f3ad4e0ebc862372ce81325d458c1605a379802453b413827442f8/merged" =
+    { device = "overlay";
+      fsType = "overlay";
+    };
+
+  fileSystems."/vault" =
+    { device = "vault";
+      fsType = "zfs";
+    };
+
+  fileSystems."/var/lib/docker/overlay2/8de627668971456d0e2841b0057a8cfc6c3a29a39c6853667a4f540299208863/merged" =
+    { device = "overlay";
+      fsType = "overlay";
+    };
+
+  fileSystems."/var/lib/docker/overlay2/90b8282324e29f01bac97717a4e098840b9a1fbc4f3262284ba5127e4cef2432/merged" =
+    { device = "overlay";
+      fsType = "overlay";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/9c773a21-3c71-411a-a78f-3930bfe29088"; }
     ];
@@ -33,9 +53,11 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp1s0d1.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.veth1ed18b6.useDHCP = lib.mkDefault true;
+  # networking.interfaces.veth9e5d930.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

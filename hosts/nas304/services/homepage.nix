@@ -7,7 +7,7 @@
       {
         resources = {
           cpu = true;
-          disk = "/";
+          disk = "/vault";
           memory = true;
         };
       }

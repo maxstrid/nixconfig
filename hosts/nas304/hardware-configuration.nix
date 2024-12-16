@@ -24,24 +24,9 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/var/lib/docker/overlay2/2781b51025f3ad4e0ebc862372ce81325d458c1605a379802453b413827442f8/merged" =
-    { device = "overlay";
-      fsType = "overlay";
-    };
-
   fileSystems."/vault" =
     { device = "vault";
       fsType = "zfs";
-    };
-
-  fileSystems."/var/lib/docker/overlay2/8de627668971456d0e2841b0057a8cfc6c3a29a39c6853667a4f540299208863/merged" =
-    { device = "overlay";
-      fsType = "overlay";
-    };
-
-  fileSystems."/var/lib/docker/overlay2/90b8282324e29f01bac97717a4e098840b9a1fbc4f3262284ba5127e4cef2432/merged" =
-    { device = "overlay";
-      fsType = "overlay";
     };
 
   swapDevices =

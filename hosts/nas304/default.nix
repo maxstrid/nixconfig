@@ -14,7 +14,10 @@
 
   boot = {
       supportedFilesystems = [ "zfs" ];
-      zfs.forceImportRoot = false;
+      zfs = {
+        forceImportRoot = false;
+        enableUnstable = true;
+      };
       loader = {
         systemd-boot.enable = true;
         efi.canTouchEfiVariables = true;
@@ -64,7 +67,7 @@
     htop
     git
     wget
-    zfs
+    zfs_unstable
   ];
 
   programs.gnupg.agent = {

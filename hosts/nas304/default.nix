@@ -16,7 +16,7 @@
       supportedFilesystems = [ "zfs" ];
       zfs = {
         forceImportRoot = false;
-        enableUnstable = true;
+        package = pkgs.zfs_unstable;
       };
       loader = {
         systemd-boot.enable = true;

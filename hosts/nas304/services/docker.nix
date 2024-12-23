@@ -28,7 +28,7 @@
           image = "qmcgaw/gluetun:v3.37.0";
           ports = [
             # Qbittorrent
-            "8080:8080"
+            "8080:8083"
             "41198:41198"
             "41198:41198/udp"
           ];

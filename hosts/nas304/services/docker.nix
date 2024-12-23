@@ -28,7 +28,7 @@
           image = "qmcgaw/gluetun:v3.37.0";
           ports = [
             # Qbittorrent
-            "8080:8083"
+            "8083:8083"
             "41198:41198"
             "41198:41198/udp"
           ];
@@ -51,7 +51,7 @@
             PUID = "1000";
             PGID = "1000";
             TZ = "US/Pacific";
-            WEBUI_PORT = "8080";
+            WEBUI_PORT = "8083";
           };
           volumes = [
             "/vault/qbittorrent/config/:/config"

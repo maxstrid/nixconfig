@@ -68,6 +68,7 @@
     git
     wget
     zfs_unstable
+    nextcloud30
   ];
 
   programs.gnupg.agent = {

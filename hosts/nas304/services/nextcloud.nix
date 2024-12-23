@@ -7,6 +7,6 @@
         hostName = "localhost";
         config.adminpassFile = config.sops.secrets.nextcloud-adminpass.path;
         database.createLocally = true;
-        config.trusted_proxies = ["127.0.0.1"];
+        settings.trusted_proxies = ["127.0.0.1"];
     };
 }

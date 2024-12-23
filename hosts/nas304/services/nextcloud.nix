@@ -4,7 +4,9 @@
     services.nextcloud = {
         enable = true;
         package = pkgs.nextcloud30;
-        hostName = "nas304.localdomain/nextcloud";
+        hostName = "localhost";
         config.adminpassFile = config.sops.secrets.nextcloud-adminpass.path;
+        database.createLocally = true;
+        config.trusted_proxies = ['127.0.0.1'];
     };
 }

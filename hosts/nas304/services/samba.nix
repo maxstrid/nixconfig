@@ -16,8 +16,8 @@
         "guest account" = "nobody";
         "map to guest" = "bad user";
       };
-      "test" = {
-        "path" = "/vault/archive";
+      "archive" = {
+        "path" = "/apollo/smb/archive";
         "browseable" = "yes";
         "read only" = "no";
         "guest ok" = "no";

@@ -15,8 +15,8 @@
           autoStart = true;
           image = "jellyfin/jellyfin";
           volumes = [
-            "/vault/jellyfin/config:/config"
-            "/vault/media:/media"
+            "/apollo/jellyfin/config:/config"
+            "/apollo/media:/media"
           ];
           ports = [
             "8096:8096"
@@ -54,8 +54,8 @@
             WEBUI_PORT = "8083";
           };
           volumes = [
-            "/vault/qbittorrent/config/:/config"
-            "/vault/media:/downloads"
+            "/apollo/qbittorrent/config/:/config"
+            "/apollo/media:/downloads"
           ];
           dependsOn = ["gluetun"];
           extraOptions = [

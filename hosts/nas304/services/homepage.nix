@@ -3,6 +3,7 @@
 {
   services.homepage-dashboard = {
     enable = true;
+    allowedHosts = "nas304.localdomain";
     widgets = [
       {
         resources = {
